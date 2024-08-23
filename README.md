@@ -1,4 +1,4 @@
-Student Allocation Management Project
+# Student Allocation Management Project
 
 **Objective:** Efficiently allocate students to preferred subjects based on their preferences and academic performance.
 
