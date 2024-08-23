@@ -1,5 +1,5 @@
-**Student Allocation Management Project
-**
+Student Allocation Management Project
+
 **Objective:** Efficiently allocate students to preferred subjects based on their preferences and academic performance.
 
 **System Overview:** Maintains a table of subjects with the number of available seats for each.
