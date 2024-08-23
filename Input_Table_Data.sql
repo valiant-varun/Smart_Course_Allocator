@@ -1,6 +1,6 @@
 use examples;
 CREATE TABLE studentpreference (
-    studentid INT(9),
+    studentid INT,
     subjectid VARCHAR(10),
     preference INT(2)
 );
@@ -8,12 +8,12 @@ CREATE TABLE studentpreference (
 CREATE TABLE subjectdetails (
     subjectid VARCHAR(6) PRIMARY KEY,
     subjectname VARCHAR(1000),
-    maxseats INT(100),
+    maxseats INT,
     remainingseats INT(100)
 );
 
 CREATE TABLE studentdetails (
-    studentid INT(10),
+    studentid INT,
     studentname VARCHAR(100),
     GPA FLOAT(5)
 );
