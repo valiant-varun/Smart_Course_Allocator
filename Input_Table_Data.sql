@@ -1,15 +1,18 @@
-use examples;
+use database_name;
+drop table if exists studentdetails;
+drop table if exists studentpreference;
+drop table if exists subjectdetails;
 CREATE TABLE studentpreference (
     studentid INT,
     subjectid VARCHAR(10),
-    preference INT(2)
+    preference INT
 );
 
 CREATE TABLE subjectdetails (
     subjectid VARCHAR(6) PRIMARY KEY,
     subjectname VARCHAR(1000),
     maxseats INT,
-    remainingseats INT(100)
+    remainingseats INT
 );
 
 CREATE TABLE studentdetails (
@@ -18,19 +21,17 @@ CREATE TABLE studentdetails (
     GPA FLOAT(5)
 );
 
-drop table studentdetails;
-drop table studentpreference;
-drop table subjectdetails;
-show tables;
+
+
 -- Insert 6 random subjects
 INSERT INTO subjectdetails (subjectid, subjectname, maxseats, remainingseats)
 VALUES
     ('PO1491', 'Basics of political science', 60, 1),
     ('PO1492', 'Basics of accounting', 120, 1),
     ('PO1493', 'Basics of financial markets', 90, 1),
-    ('PO1494', 'Eco philosophy', 60, 0),
-    ('PO1495', 'Automotive trends', 60, 0),
-    ('PO1496', 'Automotive trends 2', 60, 0);
+    ('PO1494', 'Eco philosophy', 60,1),
+    ('PO1495', 'Automotive trends', 60, 1),
+    ('PO1496', 'Automotive trends 2', 60, 1);
 
 -- Insert 100 students with different CGPA and student ID
 INSERT INTO studentdetails (studentid, studentname, GPA)
@@ -64,12 +65,26 @@ VALUES
     (159103003, 'PO1494', 4),
     (159103003, 'PO1495', 5),
  
-    (159103004, 'PO1493', 1),
-    (159103005, 'PO1494', 1),
-    (159103006, 'PO1495', 1);
+    (159103004, 'PO1491', 1),
+    (159103004, 'PO1492', 2),
+    (159103004, 'PO1493', 3),
+    (159103004, 'PO1494', 4),
+    (159103004, 'PO1495', 5),
+    
+    (159103005, 'PO1491', 1),
+    (159103005, 'PO1492', 2),
+    (159103005, 'PO1493', 3),
+    (159103005, 'PO1494', 4),
+    (159103005, 'PO1495', 5),
+    
+    (159103006, 'PO1491', 1),
+    (159103006, 'PO1492', 2),
+    (159103006, 'PO1493', 3),
+    (159103006, 'PO1494', 4),
+    (159103006, 'PO1495', 5);
     -- Insert more student preferences here
 
-
+-- show tables;
 call AllocateSubjects3();
 
 select * from unallottedstudents;
